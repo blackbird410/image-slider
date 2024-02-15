@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+:root {
+  --bgColor: #222327;
+  --arrowWidth: min(15%, 50px);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bgColor);
+  height: calc(100vh - 2rem);
+}
+
+.slider-wrapper {
+  display: grid;
+  grid-template-rows: 1fr 30px;
+  grid-template-columns: var(--arrowWidth) 1fr var(--arrowWidth);
+  gap: 1rem;
+  width: 80%;
+  align-self: stretch;
+}
+
+.slider-wrapper > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-icon {
+  font-size: 2.5rem;
+  color: orange;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.nav-circles-wrapper {
+  grid-column: 1 / -1;
+  gap: 0.5rem;
+}
+
+.nav-circle {
+  opacity: 0.5;
+  background: white;
+}
+
+.nav-circle.active {
+  opacity: 1;
+  background: orange;
+}
+
+.nav-circle {
+  border-radius: 50%;
+  background: white;
+  padding: 0.2rem;
+}
+
+div {
+}
