@@ -24,7 +24,7 @@ body {
   grid-template-rows: 1fr 30px;
   grid-template-columns: var(--arrowWidth) 1fr var(--arrowWidth);
   gap: 1rem;
-  width: 80%;
+  width: min(95%, 600px);
   align-self: stretch;
 }
 
@@ -41,6 +41,7 @@ ion-icon {
 
 img {
   max-width: min(500px, 100%);
+  max-height: 500px;
   height: auto;
 }
 
