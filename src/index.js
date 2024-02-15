@@ -62,6 +62,20 @@ const updateImage = (i) => {
 
   if (imageIndex < images.length - 1) nextArrow.classList.add("active");
   else nextArrow.classList.remove("active");
+
+  updateIndicator();
+};
+
+const updateIndicator = () => {
+  const circles = document.querySelectorAll(".nav-circle");
+  Array.from(circles).forEach((circle) => {
+    circle.classList.remove("active");
+  });
+
+  const activeCircle = !imageIndex ? 1 : Math.ceil((imageIndex + 1) / 4) + 1;
+  document
+    .querySelector(`.nav-circle:nth-of-type(${activeCircle})`)
+    .classList.add("active");
 };
 
 const previousImage = (e) => {

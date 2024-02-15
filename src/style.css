@@ -51,7 +51,7 @@ img {
 
 .nav-circle,
 .arrow {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 div.active {
@@ -61,7 +61,7 @@ div.active {
 .nav-circle {
   border-radius: 50%;
   background: white;
-  padding: 0.2rem;
+  padding: 0.3rem;
 }
 
 .nav-circle.active {
