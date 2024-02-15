@@ -49,14 +49,13 @@ img {
   gap: 0.5rem;
 }
 
-.nav-circle {
+.nav-circle,
+.arrow {
   opacity: 0.5;
-  background: white;
 }
 
-.nav-circle.active {
+div.active {
   opacity: 1;
-  background: orange;
 }
 
 .nav-circle {
@@ -65,5 +64,14 @@ img {
   padding: 0.2rem;
 }
 
-div {
+.nav-circle.active {
+  background: orange;
+}
+
+.arrow {
+  align-self: center;
+}
+
+.arrow.active:hover {
+  opacity: 0.7;
 }
