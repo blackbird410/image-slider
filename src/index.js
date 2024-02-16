@@ -8,6 +8,14 @@ import i6 from "./img/lee-myungseong.jpg";
 import i7 from "./img/the-storyteller.jpg";
 import i8 from "./img/pablo-merchan-montes.jpg";
 import i9 from "./img/alexandru-bogdan-ghita.jpg";
+import i10 from "./img/eugene-Xk0jQPZseMk-unsplash.jpg";
+import i11 from "./img/faisal-BS4Zeq7xDRk-unsplash.jpg";
+import i12 from "./img/casey-lee-awj7sRviVXo-unsplash.jpg";
+import i13 from "./img/jenn-kosar-jrWoDRmhwRY-unsplash.jpg";
+import i14 from "./img/spencer-davis-5dsZnCVDHd0-unsplash.jpg";
+import i15 from "./img/jonathan-borba-Gkc_xM3VY34-unsplash.jpg";
+import i16 from "./img/jay-wennington-N_Y88TWmGwA-unsplash.jpg";
+import i17 from "./img/mgg-vitchakorn-DDn9I5V1ubE-unsplash.jpg";
 
 const displayMain = () => {
   const wrapper = document.createElement("div");
@@ -32,12 +40,12 @@ const displayMain = () => {
   arrowLeftWrapper.addEventListener("click", previousImage);
   arrowRightWrapper.addEventListener("click", nextImage);
 
-  imageWrapper.appendChild(images[0]);
+  imageWrapper.style.backgroundImage = `url(${i1})`;
 
-  for (let i = 0; i < 4; i += 1) {
+  for (let i = 0; i < imageList.length; i += 1) {
     const circle = document.createElement("div");
     circle.classList.add("nav-circle");
-
+    circle.id = `circle-${i + 1}`;
     if (!i) circle.classList.add("active");
 
     navCircles.appendChild(circle);
@@ -51,8 +59,7 @@ const displayMain = () => {
 };
 
 const updateImage = (i) => {
-  document.querySelector("img").remove();
-  document.querySelector(".image-wrapper").appendChild(i);
+  document.querySelector(".image-wrapper").style.backgroundImage = `url(${i})`;
 
   const previousArrow = document.querySelector(".arrow.previous");
   const nextArrow = document.querySelector(".arrow.next");
@@ -60,7 +67,7 @@ const updateImage = (i) => {
   if (imageIndex > 0) previousArrow.classList.add("active");
   else previousArrow.classList.remove("active");
 
-  if (imageIndex < images.length - 1) nextArrow.classList.add("active");
+  if (imageIndex < imageList.length - 1) nextArrow.classList.add("active");
   else nextArrow.classList.remove("active");
 
   updateIndicator();
@@ -72,39 +79,44 @@ const updateIndicator = () => {
     circle.classList.remove("active");
   });
 
-  const activeCircle = !imageIndex ? 1 : Math.ceil((imageIndex + 1) / 4) + 1;
   document
-    .querySelector(`.nav-circle:nth-of-type(${activeCircle})`)
+    .querySelector(`.nav-circle:nth-of-type(${imageIndex + 1})`)
     .classList.add("active");
 };
 
 const previousImage = (e) => {
   if (e.currentTarget.classList.contains("active")) {
     imageIndex -= 1;
-    updateImage(images[imageIndex]);
+    updateImage(imageList[imageIndex]);
   }
 };
 
 const nextImage = (e) => {
   if (e.currentTarget.classList.contains("active")) {
     imageIndex += 1;
-    updateImage(images[imageIndex]);
+    updateImage(imageList[imageIndex]);
   }
 };
 
-const getImages = () => {
-  let list = [];
-  imageList.forEach((i) => {
-    const e = document.createElement("img");
-    e.src = i;
-    list.push(e);
-  });
-
-  return list;
-};
-
-const imageList = [i1, i2, i3, i4, i5, i6, i7, i8, i9];
+const imageList = [
+  i1,
+  i2,
+  i3,
+  i4,
+  i5,
+  i6,
+  i7,
+  i8,
+  i9,
+  i10,
+  i11,
+  i12,
+  i13,
+  i14,
+  i15,
+  i16,
+  i17,
+];
 let imageIndex = 0;
-const images = getImages();
 
 displayMain();
