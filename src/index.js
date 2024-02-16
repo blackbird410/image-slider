@@ -16,7 +16,11 @@ import i14 from "./img/spencer-davis-5dsZnCVDHd0-unsplash.jpg";
 import i15 from "./img/jonathan-borba-Gkc_xM3VY34-unsplash.jpg";
 import i16 from "./img/jay-wennington-N_Y88TWmGwA-unsplash.jpg";
 import i17 from "./img/mgg-vitchakorn-DDn9I5V1ubE-unsplash.jpg";
+import myAudio from "./audio.mp3";
 
+const audio = new Audio(myAudio);
+audio.play();
+let imageIndex = 0;
 const displayMain = () => {
   const wrapper = document.createElement("div");
   const imageWrapper = document.createElement("div");
@@ -123,7 +127,6 @@ const imageList = [
   i16,
   i17,
 ];
-let imageIndex = 0;
 
 displayMain();
 setInterval(() => {
