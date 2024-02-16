@@ -47,6 +47,11 @@ const displayMain = () => {
     circle.classList.add("nav-circle");
     circle.id = `circle-${i + 1}`;
     if (!i) circle.classList.add("active");
+    circle.addEventListener("click", (e) => {
+      const target = e.currentTarget.id.split("-")[1];
+      imageIndex = target - 1;
+      updateImage();
+    });
 
     navCircles.appendChild(circle);
   }
@@ -58,8 +63,9 @@ const displayMain = () => {
   document.body.appendChild(wrapper);
 };
 
-const updateImage = (i) => {
-  document.querySelector(".image-wrapper").style.backgroundImage = `url(${i})`;
+const updateImage = () => {
+  document.querySelector(".image-wrapper").style.backgroundImage =
+    `url(${imageList[imageIndex]})`;
 
   const previousArrow = document.querySelector(".arrow.previous");
   const nextArrow = document.querySelector(".arrow.next");
@@ -87,14 +93,14 @@ const updateIndicator = () => {
 const previousImage = (e) => {
   if (e.currentTarget.classList.contains("active")) {
     imageIndex -= 1;
-    updateImage(imageList[imageIndex]);
+    updateImage();
   }
 };
 
 const nextImage = (e) => {
   if (e.currentTarget.classList.contains("active")) {
     imageIndex += 1;
-    updateImage(imageList[imageIndex]);
+    updateImage();
   }
 };
 
