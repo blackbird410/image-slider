@@ -38,7 +38,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background 1500ms ease-out;
+  transition: background 4500ms ease;
 }
 
 ion-icon {
