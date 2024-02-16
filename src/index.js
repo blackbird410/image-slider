@@ -126,7 +126,3 @@ const imageList = [
 let imageIndex = 0;
 
 displayMain();
-setInterval(() => {
-  imageIndex = (imageIndex + 1) % imageList.length;
-  updateImage();
-}, 5000);
